@@ -9,9 +9,9 @@ import java.io.PrintWriter;
 
 public class SimpleDummy {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
 
-        try (ServerSocket server = new ServerSocket(8083)) {
+        try (ServerSocket server = new ServerSocket(8080)) {
             System.out.println("Start connection on port 8080");
 
             while (true) {
@@ -35,6 +35,8 @@ public class SimpleDummy {
                     System.out.println("Client disconnected");
                 }
             }
+        } catch (IOException ex) {
+            ex.printStackTrace();
         }
     }
 }
